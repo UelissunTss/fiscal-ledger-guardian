@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiscal Ledger Guardian - Detalhes da Blockchain</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Fiscal Ledger</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+          <li class="active"><a href="#"><i class="fas fa-exchange-alt"></i> Transações</a></li>
+          <li><a href="#"><i class="fas fa-building"></i> Órgãos</a></li>
+          <li><a href="#"><i class="fas fa-chart-pie"></i> Relatórios</a></li>
+          <li><a href="#"><i class="fas fa-search"></i> Rastreamento</a></li>
+          <li><a href="#"><i class="fas fa-exclamation-triangle"></i> Denúncias</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-search">
+          <input type="text" placeholder="Buscar transações...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-user">
+          <span>Bem-vindo, Admin</span>
+          <div class="user-avatar">A</div>
+        </div>
+      </header>
+
+      <!-- Blockchain Detail Content -->
+      <div class="content">
+        <div class="content-header">
+          <div>
+            <h1>Detalhes da Transação</h1>
+            <p class="breadcrumb">
+              <a href="index.html">Dashboard</a> / 
+              <a href="#">Blockchain</a> / 
+              <span>Ox7a59c429953becabc76c4d9396aa37f524f155384ca9527947f3b29aa561fb9b</span>
+            </p>
+          </div>
+          <div class="header-actions">
+            <button class="btn btn-outline">
+              <i class="fas fa-copy"></i> Copiar Hash
+            </button>
+            <a href="index.html" class="btn">
+              <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+          </div>
+        </div>
+
+        <!-- Transaction Hash Card -->
+        <div class="hash-card">
+          <div class="hash-title">Hash da Transação</div>
+          <div class="hash-content">
+            <code>Ox7a59c429953becabc76c4d9396aa37f524f155384ca9527947f3b29aa561fb9b</code>
+          </div>
+          <div class="status-badge confirmed">
+            <i class="fas fa-check-circle"></i> Confirmada
+          </div>
+        </div>
+
+        <!-- Transaction Overview -->
+        <div class="detail-card">
+          <h2>Visão Geral da Transação</h2>
+          
+          <div class="detail-row">
+            <div class="detail-label">Data da Transação</div>
+            <div class="detail-value">30 Mar 2023, 15:24:36 (UTC-3)</div>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-label">Número do Bloco</div>
+            <div class="detail-value">
+              <a href="#" class="detail-link">14,294,745</a>
+              <span class="confirmation-badge">
+                <i class="fas fa-shield-alt"></i> 42,583 confirmações
+              </span>
+            </div>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-label">De</div>
+            <div class="detail-value address-value">
+              <a href="#" class="detail-link">0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640</a>
+              <span class="address-tag">Tesouro Nacional</span>
+            </div>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-label">Para</div>
+            <div class="detail-value address-value">
+              <a href="#" class="detail-link">0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D</a>
+              <span class="address-tag">Ministério da Educação</span>
+            </div>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-label">Valor</div>
+            <div class="detail-value value-amount">R$ 5.200.000,00</div>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-label">Taxa de Transação</div>
+            <div class="detail-value">R$ 2,35 <span class="fee-detail">(0.00045%)</span></div>
+          </div>
+        </div>
+
+        <!-- Transaction Details -->
+        <div class="detail-card">
+          <h2>Informações Adicionais</h2>
+          
+          <div class="detail-row">
+            <div class="detail-label">Descrição</div>
+            <div class="detail-value">Transferência para o programa de ampliação de escolas técnicas federais</div>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-label">Método</div>
+            <div class="detail-value">
+              <code>transfer(address _to, uint256 _value)</code>
+            </div>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-label">Gás Usado</div>
+            <div class="detail-value">97,562 (78.05%)</div>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-label">Limite de Gás</div>
+            <div class="detail-value">125,000</div>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-label">Validada Por</div>
+            <div class="detail-value address-value">
+              <a href="#" class="detail-link">0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD</a>
+              <span class="address-tag">Tribunal de Contas da União</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documents Section -->
+        <div class="detail-card">
+          <h2>Documentos Anexados</h2>
+          
+          <div class="documents-list">
+            <div class="document-item">
+              <div class="document-icon"><i class="fas fa-file-pdf"></i></div>
+              <div class="document-info">
+                <div class="document-name">Contrato de Repasse - MEC.pdf</div>
+                <div class="document-hash">Hash: 4f2c8e5b7a9d3f1e6c0b...</div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-sm"><i class="fas fa-download"></i> Baixar</button>
+                <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i> Visualizar</button>
+              </div>
+            </div>
+            
+            <div class="document-item">
+              <div class="document-icon"><i class="fas fa-file-alt"></i></div>
+              <div class="document-info">
+                <div class="document-name">Termo de Prestação de Contas.docx</div>
+                <div class="document-hash">Hash: 9e1a7c6b5d2f8e3a4c0...</div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-sm"><i class="fas fa-download"></i> Baixar</button>
+                <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i> Visualizar</button>
+              </div>
+            </div>
+            
+            <div class="document-item">
+              <div class="document-icon"><i class="fas fa-file-excel"></i></div>
+              <div class="document-info">
+                <div class="document-name">Planilha de Custos - Projeto Escola Técnica.xlsx</div>
+                <div class="document-hash">Hash: 2b7e9a4c8d1f5e6b3a...</div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-sm"><i class="fas fa-download"></i> Baixar</button>
+                <button class="btn btn-sm btn-outline"><i class="fas fa-eye"></i> Visualizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

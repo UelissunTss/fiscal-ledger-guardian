@@ -1,26 +1,196 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fiscal-ledger-guardian</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiscal Ledger Guardian - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Fiscal Ledger</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="active"><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+          <li><a href="#"><i class="fas fa-exchange-alt"></i> Transações</a></li>
+          <li><a href="#"><i class="fas fa-building"></i> Órgãos</a></li>
+          <li><a href="#"><i class="fas fa-chart-pie"></i> Relatórios</a></li>
+          <li><a href="#"><i class="fas fa-search"></i> Rastreamento</a></li>
+          <li><a href="#"><i class="fas fa-exclamation-triangle"></i> Denúncias</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-    <meta property="og:title" content="fiscal-ledger-guardian" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-search">
+          <input type="text" placeholder="Buscar transações...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-user">
+          <span>Bem-vindo, Admin</span>
+          <div class="user-avatar">A</div>
+        </div>
+      </header>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+      <!-- Dashboard Content -->
+      <div class="content">
+        <div class="content-header">
+          <div>
+            <h1>Dashboard</h1>
+            <p>Monitoramento de transações em tempo real</p>
+          </div>
+          <div class="header-info">
+            <p class="update-time">Última atualização: <span id="update-time">12/04/2025 15:30:22</span></p>
+            <a href="blockchain-detail.html" class="btn">
+              <i class="fas fa-arrow-right-circle"></i> Ver Exemplo Blockchain
+            </a>
+          </div>
+        </div>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        <!-- Stat Cards -->
+        <div class="stat-cards">
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="stat-info">
+              <p>Total de Transações</p>
+              <h3>R$ 47,5 Bi</h3>
+              <p class="stat-change"><i class="fas fa-arrow-up"></i> +3.2% neste mês</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="stat-info">
+              <p>Órgãos Monitorados</p>
+              <h3>1.295</h3>
+              <p class="stat-change"><i class="fas fa-arrow-up"></i> +12 neste mês</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon yellow">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="stat-info">
+              <p>Transações em Análise</p>
+              <h3>237</h3>
+              <p class="stat-change">Valor: R$ 1,2 Bi</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon red">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="stat-info">
+              <p>Transações Suspeitas</p>
+              <h3>42</h3>
+              <p class="stat-change red-text">Valor: R$ 325 Mi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction Chart -->
+        <div class="chart-container">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3>Fluxo de Transações</h3>
+            </div>
+            <div class="chart" id="transaction-chart">
+              <!-- Canvas para o gráfico -->
+              <canvas id="transactionChartCanvas" height="300"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction Table -->
+        <div class="table-card">
+          <div class="table-header">
+            <h3>Últimas Transações</h3>
+            <button class="btn btn-outline">Ver todas</button>
+          </div>
+          <div class="table-container">
+            <table class="transaction-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Origem</th>
+                  <th>Destino</th>
+                  <th>Valor</th>
+                  <th>Data</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="id-code">TX78521</td>
+                  <td>Tesouro Nacional</td>
+                  <td>Ministério da Educação</td>
+                  <td class="align-right">R$ 5.200.000,00</td>
+                  <td>01/04/2023</td>
+                  <td><span class="badge green"><i class="fas fa-check-circle"></i> Confirmada</span></td>
+                  <td class="align-right"><a href="#" class="btn-link">Detalhes</a></td>
+                </tr>
+                <tr>
+                  <td class="id-code">TX78522</td>
+                  <td>Ministério da Saúde</td>
+                  <td>Hospital Universitário de Brasília</td>
+                  <td class="align-right">R$ 3.800.000,00</td>
+                  <td>01/04/2023</td>
+                  <td><span class="badge green"><i class="fas fa-check-circle"></i> Confirmada</span></td>
+                  <td class="align-right"><a href="#" class="btn-link">Detalhes</a></td>
+                </tr>
+                <tr>
+                  <td class="id-code">TX78523</td>
+                  <td>Ministério da Infraestrutura</td>
+                  <td>DNIT</td>
+                  <td class="align-right">R$ 12.000.000,00</td>
+                  <td>31/03/2023</td>
+                  <td><span class="badge yellow"><i class="fas fa-circle"></i> Em Análise</span></td>
+                  <td class="align-right"><a href="#" class="btn-link">Detalhes</a></td>
+                </tr>
+                <tr>
+                  <td class="id-code">TX78524</td>
+                  <td>Fundação de Amparo à Pesquisa</td>
+                  <td>Universidade Federal</td>
+                  <td class="align-right">R$ 1.450.000,00</td>
+                  <td>30/03/2023</td>
+                  <td><span class="badge green"><i class="fas fa-check-circle"></i> Confirmada</span></td>
+                  <td class="align-right"><a href="#" class="btn-link">Detalhes</a></td>
+                </tr>
+                <tr class="suspicious-row">
+                  <td class="id-code">TX78525</td>
+                  <td>Ministério da Cidadania</td>
+                  <td>Conta Desconhecida</td>
+                  <td class="align-right">R$ 7.800.000,00</td>
+                  <td>30/03/2023</td>
+                  <td><span class="badge red"><i class="fas fa-exclamation-circle"></i> Suspeita</span></td>
+                  <td class="align-right"><a href="#" class="btn-link">Detalhes</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts.js"></script>
+</body>
 </html>
