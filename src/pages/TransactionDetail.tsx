@@ -12,7 +12,7 @@ import {
   TableRow
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, CheckCircle, Eye, FileText, Flag, Share2 } from 'lucide-react';
+import { AlertCircle, ArrowLeft, CheckCircle, Eye, FileText, Flag, Share2 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const TransactionDetail = () => {
